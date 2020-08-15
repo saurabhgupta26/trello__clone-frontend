@@ -16,7 +16,7 @@ export default class Signup extends React.Component {
   }
   handleSubmit= () => {
     console.log("In submit");
-      let url = 'https://conduit.productionready.io/api/users';
+      let url = 'https://localhost:3000/users/';
       fetch(url, {
         method:'POST',
         headers: {

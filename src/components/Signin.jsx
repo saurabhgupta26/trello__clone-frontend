@@ -19,7 +19,7 @@ class Signin extends React.Component {
   };
 
   handleSubmit = () => {
-    let url = "https://conduit.productionready.io/api/users/login";
+    let url = "https://localhost:3000/users/login";
     let userInfo = {...this.state};
     this.props.dispatch(handleSignin(url, userInfo, this.props.history))
 
