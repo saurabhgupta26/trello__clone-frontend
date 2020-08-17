@@ -1,4 +1,4 @@
-import { userInfo, isLogged } from "./types";
+import { userInfo, isLogged, error } from "./types";
 
 export function handleSignin(url, userInfo, history) {
   return function (dispatch) {
