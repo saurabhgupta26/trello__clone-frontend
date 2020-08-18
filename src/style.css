@@ -1,4 +1,4 @@
-html,
+/* html,
 body,
 div,
 span,
@@ -88,7 +88,7 @@ video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article,
+/* article,
 aside,
 details,
 figcaption,
@@ -114,9 +114,9 @@ ul {
 blockquote,
 q {
     quotes: none;
-}
+} */
 
-blockquote:before,
+/* blockquote:before,
 blockquote:after,
 q:before,
 q:after {
@@ -127,4 +127,72 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+} */
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 10rem;
+    height: auto;
+    padding: 5px;
+}
+
+.nav-wrapper {
+    background-color: #0277bd;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.hero {
+    background-color: #0277bd;
+    height: 100vh;
+}
+
+.hero_body {}
+
+.hero_img {}
+
+.hero_body h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.hero_body p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.btn-large {
+    background-color: #61BD4F;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.signupText {
+    flex-basis: 30%;
+    border-radius: 5px;
+    margin-left: 20px;
+    background: white;
+}
+.signup_btn:hover {
+    color: white;
+}
+
+.flex1 {
+    justify-content: left;
+}
+.signup_btn {
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background: white;
+    color: #0277bd;
 }

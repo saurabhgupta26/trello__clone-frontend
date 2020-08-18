@@ -9,18 +9,17 @@ import Error from "./components/Error.jsx";
 import Setting from "./components/Setting.jsx";
 
 class App extends React.Component {
-  // componentDidMount() {}
-  
   render() {
     return (
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Switch>
-          <Route component={Homepage} path="/homepage" exact />
-          {/* <Route render={() => <Signin />} path="/login" /> */}
+          <Route path="/homepage" exact component={Homepage} />
+          <Route render={() => <Signin />} path="/login" />
           {/* <Route render={() => <Setting />} path="/setting/:profileSlug" /> */}
-          <Route component={Signup} path="/signup" />
+          <Route path="/signup" component={Signup} />
           <Route component={Error} />
+          {/* <Route path="/" render={() => <h1> Hello Ww</h1>} /> */}
         </Switch>
       </BrowserRouter>
     );
