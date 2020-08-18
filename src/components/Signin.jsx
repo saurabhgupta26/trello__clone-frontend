@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleSignin } from "../store/actions";
 import { userInfo } from "../store/types";
+import logo from "./assets/trello_b.png";
 
 class Signin extends React.Component {
   constructor(props) {
@@ -19,21 +20,21 @@ class Signin extends React.Component {
   };
 
   handleSubmit = () => {
-    let url = "https://localhost:3000/users/login";
-    let userInfo = {...this.state};
-    this.props.dispatch(handleSignin(url, userInfo, this.props.history))
-
-  }
+    let url = "https://localhost:4000/users/login";
+    let userInfo = { ...this.state };
+    this.props.dispatch(handleSignin(url, userInfo, this.props.history));
+  };
   render() {
     let { email, password, error } = this.state;
     return (
-      <>
+      <main className="signup_bkg">
         <div className="signup_card">
-          <h1>Sign In</h1>
+        <img className="logo" src={logo} alt="logo1" />
+          <h4>Log in to Trello</h4>
           <a className="primary_color" href="/signup">
             Need an account?
           </a>
-          <div className="flex flex2">
+          <div className="">
             <input
               className="form_field"
               type="email"
@@ -51,12 +52,12 @@ class Signin extends React.Component {
               value={password}
             />
             <p>{error && error}</p>
-            <button className="primary primary_btn" onClick={this.handleSubmit}>
+            <button className="signup_button" onClick={this.handleSubmit}>
               Log In
             </button>
           </div>
         </div>
-      </>
+      </main>
     );
   }
 }

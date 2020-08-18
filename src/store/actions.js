@@ -11,7 +11,7 @@ export function handleSignin(url, userInfo, history) {
     })
       .then((res) => {
         if (res.status === 200) {
-          history.push("/");
+          history.push("/dashboard");
         } else {
           return dispatch({ type: error, payload: "Something went wrong!" });
         }
@@ -45,3 +45,4 @@ export function checkUser(url) {
     }
   };
 }
+

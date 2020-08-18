@@ -1,6 +1,7 @@
 import React from "react";
-// import { connect } from "react-redux";
-// import { handleSignup } from "../store/actions";
+import { connect } from "react-redux";
+import { handleSignup } from "../store/actions";
+import logo from "./assets/trello_b.png";
 
 export default class Signup extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export default class Signup extends React.Component {
   }
   handleSubmit= () => {
     console.log("In submit");
-      let url = 'https://localhost:3000/users/';
+      let url = 'https://localhost:4000/users/';
       fetch(url, {
         method:'POST',
         headers: {
@@ -32,13 +33,14 @@ export default class Signup extends React.Component {
   render() {
       let {username, email, password} = this.state;
     return (
-      <>
+      <main className="signup_bkg">
         <div className="signup_card">
-          <h1>Sign Up</h1>
+          <img className='logo' src={logo} alt="logo1"/>
+          <h4>Sign up for your account</h4>
           <a className="primary_color" href="/login">
             Have an account?
           </a>
-          <div className="flex flex2">        
+          <div className="">        
             <input
               className="form_field"
               type="text"
@@ -68,12 +70,12 @@ export default class Signup extends React.Component {
             <input
               type="submit"
               value="Sign Up"
-              className="primary primary_btn"
+              className="signup_button"
               onClick={this.handleSubmit}
             />
           </div>
         </div>
-      </>
+      </main>
     );
   }
 }
