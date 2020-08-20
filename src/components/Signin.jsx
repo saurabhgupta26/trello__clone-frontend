@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { handleSignin } from "../store/actions";
 import { userInfo } from "../store/types";
 import logo from "./assets/trello_b.png";
+import axios from "axios";
 
 class Signin extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Signin extends React.Component {
   };
 
   handleSubmit = () => {
-    let url = "https://localhost:4000/users/login";
+    let url = "/users/login";
     let userInfo = { ...this.state };
     this.props.dispatch(handleSignin(url, userInfo, this.props.history));
   };

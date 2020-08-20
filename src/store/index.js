@@ -13,6 +13,7 @@ const initialState = {
 function reducer(state = initialState, action) {
   switch (action.type) {
     case userInfo:
+      console.log("in reducer, userinfo");
       return {
         ...state,
         userInfo: action.payload,

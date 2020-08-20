@@ -2,45 +2,57 @@ import React from "react";
 import { connect } from "react-redux";
 import { handleSignup } from "../store/actions";
 import logo from "./assets/trello_b.png";
+import axios from "axios";
 
 export default class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        username : '',
-        email : '',
-        password: ''
+      username: "",
+      email: "",
+      password: "",
     };
   }
-  handleInput = ({target : {name, value}}) => {
-      this.setState({[name]: value})
-  }
-  handleSubmit= () => {
+  handleInput = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
+  };
+  handleSubmit = () => {
     console.log("In submit");
-      let url = 'https://localhost:4000/users/';
-      fetch(url, {
-        method:'POST',
-        headers: {
-            'Content-Type': 'application/json'},
-            body:JSON.stringify({user:this.state}),
-        }).then(res => {
-            if(res.status === 200) {
-              this.props.history.push('/login'); 
-            }
-        })
-  }
+    let url = "/users/";
+    // fetch(url, {
+    //   method:'POST',
+    //   headers: {
+    //       'Content-Type': 'application/json'},
+    //       body:JSON.stringify({user:this.state}),
+    //   }).then(res => {
+    //       if(res.status === 200) {
+    //         this.props.history.push('/login');
+    //       }
+    //   })
+    axios({
+      method: "post",
+      url,
+      data: { user: this.state },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          this.props.history.push("/login");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   render() {
-      let {username, email, password} = this.state;
+    let { username, email, password } = this.state;
     return (
       <main className="signup_bkg">
         <div className="signup_card">
-          <img className='logo' src={logo} alt="logo1"/>
+          <img className="logo" src={logo} alt="logo1" />
           <h4>Sign up for your account</h4>
           <a className="primary_color" href="/login">
             Have an account?
           </a>
-          <div className="">        
+          <div className="">
             <input
               className="form_field"
               type="text"
@@ -56,7 +68,6 @@ export default class Signup extends React.Component {
               placeholder="Email"
               onChange={this.handleInput}
               value={email}
-            
             />
             <input
               className="form_field"
@@ -65,7 +76,6 @@ export default class Signup extends React.Component {
               placeholder="*****"
               onChange={this.handleInput}
               value={password}
-            
             />
             <input
               type="submit"
