@@ -146,19 +146,19 @@ table {
 
 .flex {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-
+}
+.flex2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .hero {
     background-color: #0277bd;
     height: 100vh;
 }
-
-.hero_body {}
-
-.hero_img {}
 
 .hero_body h3 {
     color: white;
@@ -183,6 +183,7 @@ table {
     margin-left: 20px;
     background: white;
 }
+
 .signup_btn:hover {
     color: white;
 }
@@ -190,12 +191,14 @@ table {
 .flex1 {
     justify-content: left;
 }
+
 .signup_btn {
     border: 2px solid whitesmoke;
     border-radius: 5px;
     background: white;
     color: #0277bd;
 }
+
 .signup_card {
     width: 50%;
     margin: 0 auto;
@@ -203,15 +206,37 @@ table {
     border-radius: 5px;
     padding: 10px;
 }
+
 .signup_button {
     padding: 15px 60px;
     background: #61BD4F;
     color: white;
     font-weight: bold;
-    border: none;    
+    border: none;
     border-radius: 5px;
 }
+
 .signup_bkg {
     background: #f5f5f5;
     height: 100vh;
+}
+
+.header_icons {
+    width: 2rem;
+    padding-top: 20px;
+}
+
+.nav {
+    color: #fff;
+    background-color: #0277bd;
+    width: 100%;
+    height: 40px;
+    text-align: right;
+}
+
+.header_nav {
+    justify-content: space-between;
+}
+li {
+    list-style-type: none;
 }

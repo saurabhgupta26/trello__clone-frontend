@@ -2,13 +2,14 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { checkUser } from "../store/actions";
+import Header from "./Header";
 
 class Dashboard extends React.Component {
   render() {
-    const { articles } = this.props;
     return (
       <>
-        <h1>We are in the dashboard!</h1>
+        <Header /> 
+        <h4>We are in the dashboard!</h4>
         <p>Welcome!!!</p>
       </>
     );

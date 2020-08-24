@@ -8,6 +8,7 @@ import Signup from "./components/Signup.jsx";
 import Error from "./components/Error.jsx";
 import Setting from "./components/Setting.jsx";
 import Dashboard from "./components/Dashboard.jsx";
+import AddBoard from "./components/AddBoard.jsx";
 
 class App extends React.Component {
   render() {
@@ -19,8 +20,9 @@ class App extends React.Component {
           <Route render={() => <Signin />} path="/login" />
           {/* <Route render={() => <Setting />} path="/setting/:profileSlug" /> */}
           <Route path="/signup" component={Signup} />
-          <Route component={Error} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path='/addBoard' component={AddBoard} />
+          <Route component={Error} />
           {/* <Route path="/" render={() => <h1> Hello Ww</h1>} /> */}
         </Switch>
       </BrowserRouter>

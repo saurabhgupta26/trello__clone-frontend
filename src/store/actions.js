@@ -9,25 +9,30 @@ export function handleSignin(url, userInfo, history) {
         "Content-Type": "application/json",
       },
       url,
-      data: { user: this.state },
-      body: JSON.stringify({ user: userInfo }),
+      data: { user: userInfo },
+      // body: JSON.stringify({ user: userInfo }),
     })
       .then((res) => {
         if (res.status === 200) {
+          console.log(res.data);
           history.push("/dashboard");
+          res.data && dispatch({ type: isLogged, payload: true });
+          res.data && localStorage.setItem("authToken", res.data.token);
+          return dispatch({ type: userInfo, payload: res });
         } else {
           return dispatch({ type: error, payload: "Something went wrong!" });
         }
-        return res.json();
+        // console.log(res);
+        // return res.data;
       })
-      .then(({ user }) => {
-        console.log(user, "reached in the actions of log in ****************");
-        user && dispatch({ type: isLogged, payload: true });
-        user && localStorage.setItem("authToken", user.token);
-        return dispatch({ type: userInfo, payload: user });
-      });
-  }
-  .catch((err) => console.log(err));
+      // .then((data) => {
+      //   // console.log(data, "reached in the actions of log in ****************");
+      //   // data && dispatch({ type: isLogged, payload: true });
+      //   // data && localStorage.setItem("authToken", data.token);
+      //   // return dispatch({ type: userInfo, payload: data });
+      // }
+      .catch((err) => console.log(err));
+  };
 }
 // ****** //
 //   fetch(url, {
@@ -73,3 +78,19 @@ export function checkUser(url) {
     }
   };
 }
+
+export function handleAddBoard() {
+  return function(dispatch) {
+    if(localStorage.authToken) {
+      fetch(url, {
+        method:'POST', 
+        header: {
+          ""
+        }
+      })
+    }
+  }
+}
+
+
+// complete the handle Add Board

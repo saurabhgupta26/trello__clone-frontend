@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { handleSignin } from "../store/actions";
 import { userInfo } from "../store/types";
 import logo from "./assets/trello_b.png";
-import axios from "axios";
 
 class Signin extends React.Component {
   constructor(props) {
