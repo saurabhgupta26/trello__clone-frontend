@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { checkUser } from "../store/actions";
 import Header from "./Header";
+import Sidenav from "./Sidenav";
 
 class Dashboard extends React.Component {
   render() {

@@ -8,14 +8,6 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
   }
-  // componentDidMount() {
-  //   const script = document.createElement("script");
-  //   script.src='./assets/script.js';
-  //   script.async=true;
-  //   document.body.append(script);
-  // }
-  
-
   render() {
     const { articles } = this.props;
     return (
