@@ -44,7 +44,10 @@ export function handleAddBoard() {
             history.push("/dashboard");
             return dispatch({ type: boardInfo, payload: res });
           } else {
-            return dispatch({ type: error, payload: "Check again! Board didn't created." });
+            return dispatch({
+              type: error,
+              payload: "Check again! Board didn't created.",
+            });
           }
         })
         .catch((err) => console.log(err));
@@ -72,3 +75,29 @@ export function checkUser(url) {
     }
   };
 }
+
+export function handleSetting(url, userInfo, history) {
+  return function (dispatch) {
+    axios({
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      url,
+      data: { user: userInfo },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          console.log(res.data);
+          history.push("/dashboard");
+          return dispatch({ type: userInfo, payload: res });
+        } else {
+          return dispatch({ type: error, payload: "Something went wrong!" });
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+}
+
+
+// double check on the handle settings before proceeding
