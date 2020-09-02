@@ -20,11 +20,7 @@ class Setting extends React.Component {
     return (
       <>
         <Header />
-        <form action="post">
-          <input type="text" name="username" placeholder="username" />
-          <input type="text" name="bio" placeholder="Bio" />
-          <button>Save</button>
-        </form>
+        
       </>
     );
   }
