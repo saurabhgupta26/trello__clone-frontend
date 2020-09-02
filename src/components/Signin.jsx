@@ -34,7 +34,7 @@ class Signin extends React.Component {
           <a className="primary_color" href="/signup">
             Need an account?
           </a>
-          <div className="">
+          <div>
             <input
               className="form_field"
               type="email"
