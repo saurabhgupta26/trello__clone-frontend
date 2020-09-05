@@ -99,5 +99,26 @@ export function handleSetting(url, userInfo, history) {
   };
 }
 
+export function handleBoardList(url, boardInfo) {
+  return function (dispatch) {
+    axios({
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      url,
+      data: {
+        board: boardInfo,
+      },
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log(res.data);
+        return dispatch({ type: boardInfo, payload: res });
+      } else {
+        return dispatch({ type: error, payload: "Something went wrong!" });
+      }
+    });
+  };
+}
 
 // double check on the handle settings before proceeding
